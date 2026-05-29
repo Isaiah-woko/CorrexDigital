@@ -8,7 +8,7 @@ interface ContactModalProps {
 }
 
 const WHATSAPP_NUMBER = '2348139936089'
-const YOUR_EMAIL = 'hello@correxdigital.com'
+const EMAIL = 'hello@correxdigital.com'
 
 const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
   const [name, setName] = useState('')
@@ -35,7 +35,7 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
     if (!name.trim() || !message.trim()) return
     const subject = encodeURIComponent(`New message from ${name} — Correx Digital`)
     const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)
-    window.location.href = `mailto:${YOUR_EMAIL}?subject=${subject}&body=${body}`
+    window.location.href = `mailto:${EMAIL}?subject=${subject}&body=${body}`
     setSent(true)
     setTimeout(() => {
       setSent(false)
@@ -52,7 +52,7 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
   }
 
   const handleEmailDirect = () => {
-    window.location.href = `mailto:${YOUR_EMAIL}`
+    window.location.href = `mailto:${EMAIL}`
   }
 
   const inputStyle: React.CSSProperties = {
