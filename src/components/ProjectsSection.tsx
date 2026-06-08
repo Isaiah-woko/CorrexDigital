@@ -44,20 +44,19 @@ const projects = [
     col1img2: '/images/SPYRE_FLYER.png',
     col2img: '/images/FLOWER_FLYER.png',
   },
-
 ]
 
 const totalCards = projects.length
+const CARD_OFFSET = 12
 
 interface ProjectCardProps {
   project: (typeof projects)[0]
   index: number
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  containerProgress: any
+  containerProgress: ReturnType<typeof useScroll>['scrollYProgress']
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, containerProgress }) => {
-  const targetScale = 1 - (totalCards - 1 - index) * 0.03
+  const targetScale = 1 - (totalCards - 1 - index) * 0.04
   const scale = useTransform(
     containerProgress,
     [index / totalCards, (index + 1) / totalCards],
@@ -66,13 +65,15 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, containerProg
 
   return (
     <div
-      className="flex items-start justify-center"
       style={{
-        height: 'max(180vh, 900px)',
         position: 'sticky',
-        top: `${64 + index * 80}px`,
+        top: index * CARD_OFFSET,
+        paddingTop: index * CARD_OFFSET,
+        height: '100vh',
+        display: 'flex',
+        alignItems: 'flex-start',
       }}
-          >
+    >
       <motion.div
         style={{
           scale,
@@ -80,7 +81,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, containerProg
           background: '#0C0C0C',
           width: '100%',
         }}
-        className="rounded-[28px] sm:rounded-[40px] md:rounded-[50px] lg:rounded-[60px] border-2 border-[#D7E2EA] p-3 sm:p-6 md:p-8"
+        className="rounded-[28px] sm:rounded-[40px] md:rounded-[50px] lg:rounded-[60px] border-2 border-[#D7E2EA] p-3 sm:p-6 md:p-8 overflow-hidden"
       >
         {/* Top row */}
         <div className="flex items-center justify-between mb-3 sm:mb-6">
@@ -118,11 +119,11 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, containerProg
           </div>
         </div>
 
-        {/* ── MOBILE: 2 stacked images ── */}
+        {/* Mobile: 2 stacked images */}
         <div className="flex flex-col gap-2 sm:hidden">
           <div
             className="w-full rounded-[20px] overflow-hidden flex items-center justify-center"
-            style={{ background: '#111', height: 'clamp(180px, 50vw, 280px)' }}
+            style={{ background: '#111', height: 'clamp(130px, 32vw, 220px)' }}
           >
             <img
               src={project.col2img}
@@ -133,7 +134,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, containerProg
           </div>
           <div
             className="w-full rounded-[20px] overflow-hidden flex items-center justify-center"
-            style={{ background: '#111', height: 'clamp(150px, 42vw, 240px)' }}
+            style={{ background: '#111', height: 'clamp(110px, 28vw, 190px)' }}
           >
             <img
               src={project.col1img1}
@@ -144,9 +145,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, containerProg
           </div>
         </div>
 
-        {/* ── SM+: 2-column 3-image grid ── */}
+        {/* SM+: 2-column 3-image grid */}
         <div className="hidden sm:flex gap-3">
-          {/* Col 1 — 40% */}
           <div className="flex flex-col gap-3" style={{ width: '40%' }}>
             <div
               className="w-full rounded-[28px] md:rounded-[40px] overflow-hidden flex items-center justify-center"
@@ -171,8 +171,6 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, containerProg
               />
             </div>
           </div>
-
-          {/* Col 2 — 60% */}
           <div
             className="rounded-[28px] md:rounded-[40px] overflow-hidden flex items-center justify-center"
             style={{
@@ -204,24 +202,28 @@ const ProjectsSection: React.FC = () => {
   return (
     <section
       id="projects"
-      ref={containerRef}
-      className="rounded-t-[40px] sm:rounded-t-[50px] md:rounded-t-[60px] -mt-10 sm:-mt-12 md:-mt-14 relative z-10 px-3 sm:px-8 md:px-10"
-      style={{
-        background: '#0C0C0C',
-        paddingTop: 'clamp(60px, 10vw, 128px)',
-        paddingBottom: 'clamp(60px, 10vw, 128px)',
-      }}
+      className="rounded-t-[40px] sm:rounded-t-[50px] md:rounded-t-[60px] -mt-10 sm:-mt-12 md:-mt-14 relative z-10"
+      style={{ background: '#0C0C0C' }}
     >
-      <FadeIn delay={0} y={40}>
-        <h2
-          className="hero-heading font-black uppercase text-center mb-16 sm:mb-20 md:mb-28"
-          style={{ fontSize: 'clamp(2.5rem, 12vw, 160px)' }}
-        >
-          Projects
-        </h2>
-      </FadeIn>
+      {/* Heading */}
+      <div className="px-3 sm:px-8 md:px-10 pt-16 sm:pt-24 md:pt-32 pb-10 sm:pb-16">
+        <FadeIn delay={0} y={40}>
+          <h2
+            className="hero-heading font-black uppercase text-center"
+            style={{ fontSize: 'clamp(2.5rem, 12vw, 160px)' }}
+          >
+            Projects
+          </h2>
+        </FadeIn>
+      </div>
 
-      <div>
+      {/* Cards container */}
+      <div
+        ref={containerRef}
+        style={{
+          height: `calc(${totalCards * 100}vh + ${totalCards * CARD_OFFSET}px)`,
+        }}
+      >
         {projects.map((project, index) => (
           <ProjectCard
             key={project.number}

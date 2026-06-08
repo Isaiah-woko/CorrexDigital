@@ -79,11 +79,11 @@ const HeroSection: React.FC = () => {
         </FadeIn>
       </div>
 
-      {/* Bottom Bar */}
-      <div className="flex justify-between items-end pb-7 sm:pb-8 md:pb-10 px-6 md:px-10 mt-auto relative z-20">
+           {/* Bottom Bar */}
+      <div className="flex flex-col items-start gap-4 sm:flex-row sm:justify-between sm:items-end sm:gap-0 pb-7 sm:pb-8 md:pb-10 px-6 md:px-10 mt-auto relative z-20">
         <FadeIn delay={0.35} y={20}>
           <p
-            className="font-light uppercase tracking-wide leading-snug max-w-[160px] sm:max-w-[220px] md:max-w-[260px]"
+            className="font-light uppercase tracking-wide leading-snug max-w-none sm:max-w-[220px] md:max-w-[260px]"
             style={{
               color: '#D7E2EA',
               fontSize: 'clamp(0.75rem, 1.4vw, 1.5rem)',

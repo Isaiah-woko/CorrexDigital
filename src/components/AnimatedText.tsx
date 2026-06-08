@@ -11,7 +11,8 @@ const AnimatedText: React.FC<AnimatedTextProps> = ({ text, className }) => {
 
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ['start 0.8', 'end 0.2'],
+    // FIXED: Tightened scroll viewport bounds to make the trigger zone smaller and faster
+    offset: ['start 0.75', 'start 0.45'],
   })
 
   const characters = text.split('')
@@ -27,8 +28,11 @@ const AnimatedText: React.FC<AnimatedTextProps> = ({ text, className }) => {
       }}
     >
       {characters.map((char, i) => {
-        const start = i / characters.length
-        const end = (i + 1) / characters.length
+        // FIXED: Compresses individual stagger ranges so letters overlap and animate quickly
+        const total = characters.length
+        const start = (i / total) * 0.4 
+        const end = Math.min(start + 0.1, 1)
+
         return (
           <CharacterSpan
             key={i}
