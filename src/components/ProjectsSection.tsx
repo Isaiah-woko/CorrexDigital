@@ -68,9 +68,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, containerProg
     <div
       className="flex items-start justify-center"
       style={{
-        height: 'max(200vh, 900px)',   // ← guarantees enough room on any screen
+        height: 'max(180vh, 900px)',
         position: 'sticky',
-        top: `${64 + index * 40}px`,
+        top: `${64 + index * 80}px`,
       }}
           >
       <motion.div

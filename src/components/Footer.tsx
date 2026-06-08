@@ -1,5 +1,13 @@
 import React from 'react'
+import { FaGithub, FaInstagram, FaLinkedin, FaTwitter } from 'react-icons/fa'
 import ContactButton from './ContactButton'
+
+const socialLinks = [
+  { name: 'GitHub', href: '#', Icon: FaGithub },
+  { name: 'LinkedIn', href: '#', Icon: FaLinkedin },
+  { name: 'Twitter', href: '#', Icon: FaTwitter },
+  { name: 'Instagram', href: '#', Icon: FaInstagram },
+]
 
 const Footer: React.FC = () => {
   return (
@@ -36,18 +44,34 @@ const Footer: React.FC = () => {
           Correx Digital
         </span>
 
-        <nav className="flex gap-6 sm:gap-8 md:gap-10">
-          {['About', 'Services', 'Projects', 'Contact'].map((link) => (
-            <a
-              key={link}
-              href={`#${link.toLowerCase()}`}
-              className="font-medium uppercase tracking-wider transition-opacity duration-200 hover:opacity-70 text-sm md:text-base"
-              style={{ color: '#D7E2EA', opacity: 0.6, textDecoration: 'none' }}
-            >
-              {link}
-            </a>
-          ))}
-        </nav>
+        <div className="flex flex-col items-center gap-4 sm:items-end">
+          <nav className="flex gap-4 sm:gap-6 md:gap-8">
+            {['About', 'Services', 'Projects', 'Contact'].map((link) => (
+              <a
+                key={link}
+                href={`#${link.toLowerCase()}`}
+                className="font-medium uppercase tracking-wider transition-opacity duration-200 hover:opacity-70 text-sm md:text-base"
+                style={{ color: '#D7E2EA', opacity: 0.6, textDecoration: 'none' }}
+              >
+                {link}
+              </a>
+            ))}
+          </nav>
+
+          <div className="flex items-center gap-4">
+            {socialLinks.map(({ name, href, Icon }) => (
+              <a
+                key={name}
+                href={href}
+                aria-label={name}
+                className="text-[#D7E2EA] opacity-70 transition-opacity duration-200 hover:opacity-100"
+                style={{ fontSize: '1.25rem' }}
+              >
+                <Icon />
+              </a>
+            ))}
+          </div>
+        </div>
 
         <span
           className="font-light uppercase tracking-wider text-xs sm:text-sm"

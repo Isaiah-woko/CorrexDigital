@@ -7,11 +7,19 @@ const HeroSection: React.FC = () => {
   return (
     <section
       className="h-screen flex flex-col relative"
-      style={{ overflowX: 'clip' }}
+      style={{ overflowX: 'clip', paddingTop: 'calc(clamp(60px, 10vw, 128px) + 20px)' }}
     >
       {/* Navbar */}
       <FadeIn delay={0} y={-20}>
-        <nav className="flex justify-between px-6 md:px-10 pt-6 md:pt-8">
+        <nav
+          className="fixed inset-x-0 top-0 z-50 flex justify-between px-6 md:px-10 pt-6 md:pt-8 pb-4"
+          style={{
+            background: 'rgba(12, 12, 12, 0.75)',
+            backdropFilter: 'blur(14px)',
+            WebkitBackdropFilter: 'blur(14px)',
+            borderBottom: '1px solid rgba(255, 255, 255, 0.08)',
+          }}
+        >
           {['About', 'Services', 'Projects', 'Contact'].map((link) => (
             <a
               key={link}
@@ -26,47 +34,50 @@ const HeroSection: React.FC = () => {
       </FadeIn>
 
       {/* Hero Heading */}
-      <FadeIn delay={0.15} y={40}>
-        <div style={{ overflow: 'hidden' }}>
-          <h1
-            className="hero-heading font-black uppercase tracking-tight leading-none whitespace-nowrap w-full text-[10vw] sm:text-[11vw] md:text-[12vw] lg:text-[12vw] mt-6 sm:mt-4 md:-mt-5 px-6 md:px-10"
-          >
-            Correx Digital
-          </h1>
-        </div>
-      </FadeIn>
-
-      {/* Centered Magnet Visual */}
-      <FadeIn
-        delay={0.6}
-        y={30}
-        className="absolute left-1/2 -translate-x-1/2 z-10 top-1/2 -translate-y-1/2 sm:top-auto sm:translate-y-0 sm:bottom-0"
-      >
-        <Magnet
-          padding={150}
-          strength={3}
-          activeTransition="transform 0.3s ease-out"
-          inactiveTransition="transform 0.6s ease-in-out"
-        >
-          <div
-            className="rounded-full flex items-center justify-center w-[200px] sm:w-[360px] md:w-[440px] lg:w-[520px] h-[280px] sm:h-[360px] md:h-[440px] lg:h-[520px]"
-            style={{
-              border: '1px solid rgba(45, 212, 191, 0.25)',
-              boxShadow: '0 0 60px rgba(45, 212, 191, 0.08), inset 0 0 60px rgba(45, 212, 191, 0.04)',
-            }}
-          >
-            <img
-              src="/images/Correx_Digital_Logo.png"
-              alt="Correx Digital Logo"
-              className="w-[220px] sm:w-[280px] md:w-[340px] lg:w-[400px] select-none"
-              draggable={false}
-              style={{
-                filter: 'drop-shadow(0 0 40px rgba(45, 212, 191, 0.4))',
-              }}
-            />
+        <FadeIn delay={0.15} y={40}>
+          <div>
+            <h1
+              className="hero-heading font-black uppercase tracking-tight leading-none whitespace-nowrap w-full text-[10vw] sm:text-[11vw] md:text-[12vw] lg:text-[12vw] pt-4 sm:pt-0 md:-mt-14 lg:-mt-18 px-6 md:px-10"
+            >
+              Correx Digital
+            </h1>
           </div>
-        </Magnet>
-      </FadeIn>
+        </FadeIn>
+
+
+      {/* Viewport Centering Wrapper */}
+      <div className="absolute inset-x-0 top-0 h-full pointer-events-none flex items-center justify-center sm:items-end sm:pb-16">
+        <FadeIn
+          delay={0.6}
+          y={30}
+          className="z-10 pointer-events-auto sm:mb-0"
+        >
+          <Magnet
+            padding={150}
+            strength={3}
+            activeTransition="transform 0.3s ease-out"
+            inactiveTransition="transform 0.6s ease-in-out"
+          >
+            <div
+              className="rounded-full flex items-center justify-center w-[280px] h-[280px] sm:w-[360px] sm:h-[360px] md:w-[360px] md:h-[360px] lg:w-[460px] lg:h-[460px]"
+              style={{
+                border: '1px solid rgba(45, 212, 191, 0.25)',
+                boxShadow: '0 0 60px rgba(45, 212, 191, 0.08), inset 0 0 60px rgba(45, 212, 191, 0.04)',
+              }}
+            >
+              <img
+                src="/images/Correx_Digital_Logo.png"
+                alt="Correx Digital Logo"
+                className="w-[220px] sm:w-[280px] md:w-[340px] lg:w-[400px] select-none"
+                draggable={false}
+                style={{
+                  filter: 'drop-shadow(0 0 40px rgba(45, 212, 191, 0.4))',
+                }}
+              />
+            </div>
+          </Magnet>
+        </FadeIn>
+      </div>
 
       {/* Bottom Bar */}
       <div className="flex justify-between items-end pb-7 sm:pb-8 md:pb-10 px-6 md:px-10 mt-auto relative z-20">
