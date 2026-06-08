@@ -13,7 +13,7 @@ function App() {
       <MarqueeSection />
       <AboutSection />
       <ServicesSection />
-      {/* <ProjectsSection /> */}
+      <ProjectsSection />
       <StackSection />
       <Footer />
     </div>
