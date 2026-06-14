@@ -7,7 +7,6 @@ const images = [
   '/images/BURGER FLYER.png',
   '/images/CHURCH_POSTER.png',
   '/images/CLUB FLYER.png',
-  '/images/Correx_Digital_Logo.png',
   '/images/FASHION_FLYER.png',
   '/images/FLOWER_FLYER.png',
   '/images/FOREX_FLYER.png',
@@ -25,7 +24,7 @@ const images = [
   '/images/TRAVEL FLYER.png',
 ]
 
-// Duplicate the array just once per row to create a seamless infinite loop mechanism
+
 const row1 = [...images.slice(0, 11), ...images.slice(0, 11)]
 const row2 = [...images.slice(11), ...images.slice(11)]
 
@@ -35,7 +34,7 @@ const MarqueeSection: React.FC = () => {
       className="pt-24 sm:pt-32 md:pt-40 pb-10 overflow-hidden"
       style={{ background: '#0C0C0C' }}
     >
-      {/* Inject custom infinite keyframe styles directly so we don't mess up your global CSS configuration */}
+      {/* custom infinite keyframe styles directly */}
       <style>{`
         @keyframes scroll-right {
           0% { transform: translateX(-50%); }

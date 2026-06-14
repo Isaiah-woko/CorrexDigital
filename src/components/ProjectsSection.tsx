@@ -1,13 +1,13 @@
 import React, { useRef } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import FadeIn from './FadeIn'
-import ViewProjectButton from './ViewProjectButton'
 
 const projects = [
   {
     number: '01',
     category: 'Client',
     name: 'PeeSmile',
+    link: 'https://peesmile.vercel.app',
     col1img1: '/images/peesmile1.png',
     col1img2: '/images/peesmile2.png',
     col2img: '/images/peesmile.png',
@@ -16,6 +16,7 @@ const projects = [
     number: '02',
     category: 'Product',
     name: 'Business Flyers',
+    link: '', // ← no live URL for flyers, leave empty to disable button
     col1img1: '/images/FASHION_FLYER.png',
     col1img2: '/images/FOREX_FLYER.png',
     col2img: "/images/OMA'S_ANNIVERSARY(1).png",
@@ -24,6 +25,7 @@ const projects = [
     number: '03',
     category: 'Client',
     name: 'Leorus Studios',
+    link: 'https://lerous-studio.vercel.app',
     col1img1: '/images/leorus2.png',
     col1img2: '/images/leorus1.png',
     col2img: '/images/leorus.png',
@@ -32,6 +34,7 @@ const projects = [
     number: '04',
     category: 'Client',
     name: 'Personal Website',
+    link: 'https://isaiahwoko.vercel.app',
     col1img1: '/images/isaiah1.png',
     col1img2: '/images/isaiah2.png',
     col2img: '/images/isaiah.png',
@@ -40,6 +43,7 @@ const projects = [
     number: '05',
     category: 'Product',
     name: 'Design Flyers',
+    link: '', // ← no live URL for flyers, leave empty to disable button
     col1img1: '/images/SALOON_BUISNESS_FLYER.png',
     col1img2: '/images/SPYRE_FLYER.png',
     col2img: '/images/FLOWER_FLYER.png',
@@ -62,6 +66,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, containerProg
     [index / totalCards, (index + 1) / totalCards],
     [1, targetScale]
   )
+
+  const hasLink = !!project.link
 
   return (
     <div
@@ -114,9 +120,30 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, containerProg
               </span>
             </div>
           </div>
-          <div className="flex-shrink-0">
-            <ViewProjectButton />
-          </div>
+
+          {/* View Project button — anchor if link exists, disabled style if not */}
+          {hasLink ? (
+            <a
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-shrink-0 rounded-full border-2 border-[#D7E2EA] text-[#D7E2EA] font-medium uppercase tracking-widest transition-colors hover:bg-[#D7E2EA]/10 px-4 py-2 sm:px-8 sm:py-3 sm:px-10 sm:py-3.5 text-xs sm:text-sm"
+              style={{ textDecoration: 'none' }}
+            >
+              View Project
+            </a>
+          ) : (
+            <span
+              className="flex-shrink-0 rounded-full border-2 font-medium uppercase tracking-widest px-4 py-2 sm:px-8 sm:py-3 text-xs sm:text-sm"
+              style={{
+                border: '2px solid rgba(215,226,234,0.2)',
+                color: 'rgba(215,226,234,0.2)',
+                cursor: 'not-allowed',
+              }}
+            >
+              View Project
+            </span>
+          )}
         </div>
 
         {/* Mobile: 2 stacked images */}

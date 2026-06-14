@@ -1,31 +1,33 @@
 import React from 'react'
-import { FaGithub, FaInstagram, FaLinkedin, FaTwitter } from 'react-icons/fa'
+import { FaGithub, FaInstagram, FaLinkedin, FaTwitter, FaPinterest, FaDribbble } from 'react-icons/fa'
 import ContactButton from './ContactButton'
 
 const socialLinks = [
-  { name: 'GitHub', href: '#', Icon: FaGithub },
+  { name: 'GitHub', href: 'https://github.com/Isaiah-woko', Icon: FaGithub },
   { name: 'LinkedIn', href: '#', Icon: FaLinkedin },
   { name: 'Twitter', href: '#', Icon: FaTwitter },
   { name: 'Instagram', href: '#', Icon: FaInstagram },
+  { name: 'Pinterest', href: 'https://www.pinterest.com/correxdigital', Icon: FaPinterest },
+  { name: 'Dribbble', href: 'https://dribbble.com/correx-digital', Icon: FaDribbble },
 ]
 
 const Footer: React.FC = () => {
   return (
     <footer
-      className="px-6 md:px-10 py-20 sm:py-24 md:py-32 flex flex-col items-center gap-16 sm:gap-20 md:gap-24"
+      className="px-5 sm:px-8 md:px-10 py-16 sm:py-24 md:py-32 flex flex-col items-center gap-12 sm:gap-20 md:gap-24"
       style={{ background: '#0C0C0C', borderTop: '1px solid rgba(215, 226, 234, 0.1)' }}
     >
-      {/* Big CTA heading */}
-      <div className="flex flex-col items-center gap-8 text-center">
+      {/* CTA */}
+      <div className="flex flex-col items-center gap-6 sm:gap-8 text-center w-full">
         <h2
           className="hero-heading font-black uppercase leading-none tracking-tight"
-          style={{ fontSize: 'clamp(2.5rem, 10vw, 120px)' }}
+          style={{ fontSize: 'clamp(2rem, 10vw, 120px)' }}
         >
           Let's Work Together
         </h2>
         <p
-          className="font-light uppercase tracking-wide leading-snug max-w-[400px]"
-          style={{ color: '#D7E2EA', opacity: 0.5, fontSize: 'clamp(0.8rem, 1.4vw, 1.1rem)' }}
+          className="font-light uppercase tracking-wide leading-snug max-w-[340px] sm:max-w-[400px]"
+          style={{ color: '#D7E2EA', opacity: 0.5, fontSize: 'clamp(0.75rem, 1.4vw, 1.1rem)' }}
         >
           Ready to build your digital presence? We're one message away.
         </p>
@@ -36,21 +38,25 @@ const Footer: React.FC = () => {
       <div className="w-full" style={{ height: '1px', background: 'rgba(215, 226, 234, 0.1)' }} />
 
       {/* Bottom bar */}
-      <div className="w-full flex flex-col sm:flex-row justify-between items-center gap-6 sm:gap-0">
+      <div className="w-full flex flex-col items-center gap-8 lg:flex-row lg:justify-between lg:items-start lg:gap-0">
+
+        {/* Brand name */}
         <span
-          className="font-black uppercase tracking-tight"
+          className="font-black uppercase tracking-tight order-1 lg:order-none"
           style={{ color: '#D7E2EA', fontSize: 'clamp(1.2rem, 3vw, 2rem)' }}
         >
           Correx Digital
         </span>
 
-        <div className="flex flex-col items-center gap-4 sm:items-end">
-          <nav className="flex gap-4 sm:gap-6 md:gap-8">
+        {/* Nav + socials — center column */}
+        <div className="flex flex-col items-center gap-5 order-2 lg:order-none">
+          {/* Nav links */}
+          <nav className="flex flex-wrap justify-center gap-x-5 gap-y-2 sm:gap-x-6 md:gap-x-8">
             {['About', 'Services', 'Projects', 'Contact'].map((link) => (
               <a
                 key={link}
                 href={`#${link.toLowerCase()}`}
-                className="font-medium uppercase tracking-wider transition-opacity duration-200 hover:opacity-70 text-sm md:text-base"
+                className="font-medium uppercase tracking-wider transition-opacity duration-200 hover:opacity-100 text-sm md:text-base"
                 style={{ color: '#D7E2EA', opacity: 0.6, textDecoration: 'none' }}
               >
                 {link}
@@ -58,14 +64,24 @@ const Footer: React.FC = () => {
             ))}
           </nav>
 
-          <div className="flex items-center gap-4">
+          {/* Social icons */}
+          <div className="flex items-center justify-center gap-5 sm:gap-4 md:gap-5">
             {socialLinks.map(({ name, href, Icon }) => (
               <a
                 key={name}
                 href={href}
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label={name}
-                className="text-[#D7E2EA] opacity-70 transition-opacity duration-200 hover:opacity-100"
-                style={{ fontSize: '1.25rem' }}
+                className="flex items-center justify-center transition-opacity duration-200 hover:opacity-100 rounded-full"
+                style={{
+                  color: '#D7E2EA',
+                  opacity: 0.6,
+                  width: '2.2rem',
+                  height: '2.2rem',
+                  fontSize: '1.2rem',
+                  border: '1px solid rgba(215,226,234,0.12)',
+                }}
               >
                 <Icon />
               </a>
@@ -73,8 +89,9 @@ const Footer: React.FC = () => {
           </div>
         </div>
 
+        {/* Copyright */}
         <span
-          className="font-light uppercase tracking-wider text-xs sm:text-sm"
+          className="font-light uppercase tracking-wider text-xs sm:text-sm order-3 lg:order-none"
           style={{ color: '#D7E2EA', opacity: 0.3 }}
         >
           © {new Date().getFullYear()} Correx Digital

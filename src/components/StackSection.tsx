@@ -1,6 +1,6 @@
 import React from 'react'
 import FadeIn from './FadeIn'
-import { SiNextdotjs, SiTailwindcss, SiPostgresql, SiVercel, SiFigma, SiCanva } from 'react-icons/si';
+import { SiNextdotjs, SiTailwindcss, SiPostgresql, SiVercel, SiFigma, SiCanva, SiDjango } from 'react-icons/si';
 import { FaReact } from 'react-icons/fa6';
 import { BiLogoTypescript } from 'react-icons/bi';
 import { DiPhotoshop, DiIllustrator } from 'react-icons/di';
@@ -9,9 +9,14 @@ import { DiPhotoshop, DiIllustrator } from 'react-icons/di';
 
 const devTools = [
   {
+    name: 'Django',
+    description: 'Python web framework for rapid development and clean, pragmatic design.',
+    icon: <SiDjango  size={32} style={{ color: '#092E20' }} />
+  },
+  {
     name: 'Next.js',
     description: 'React framework for fast, SEO-ready web apps',
-    icon: <SiNextdotjs size={32} style={{ color: '#000000' }} />,
+    icon: <SiNextdotjs size={32} style={{ color: '#0070F3' }} />,
   },
   {
     name: 'React',
