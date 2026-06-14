@@ -45,7 +45,6 @@ const HeroSection: React.FC = () => {
       </FadeIn>
 
       {/* Viewport Centering Wrapper */}
-      {/* CHANGED HERE: top-0 h-full shifted to top-[24vh] h-[55vh] to sit perfectly between top text and bottom bar */}
       <div className="absolute inset-x-0 top-[24vh] h-[55vh] pointer-events-none flex items-center justify-center sm:items-end md:items-center sm:pb-16 md:pb-0">
         <FadeIn
           delay={0.6}
@@ -66,7 +65,7 @@ const HeroSection: React.FC = () => {
               }}
             >
               <img
-                src="/images/Correx_Digital_Logo.png"
+                src="/images/Correx_Digital_Logo.webp"
                 alt="Correx Digital Logo"
                 className="w-[220px] sm:w-[280px] md:w-[320px] lg:w-[400px] select-none"
                 draggable={false}

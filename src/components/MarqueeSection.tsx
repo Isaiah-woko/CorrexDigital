@@ -1,32 +1,22 @@
 import React from 'react'
 
 const images = [
-  '/images/AD FLYER.png',
-  '/images/peesmile.png',
-  '/images/Artboard 1.png',
-  '/images/BURGER FLYER.png',
-  '/images/CHURCH_POSTER.png',
-  '/images/CLUB FLYER.png',
-  '/images/FASHION_FLYER.png',
-  '/images/FLOWER_FLYER.png',
-  '/images/FOREX_FLYER.png',
-  '/images/MALTA_SOCIALMEDIA_FLYER.png',
-  '/images/MOVIE_POSTER.png',
-  '/images/MY_FLYER.png',
-  '/images/NIGHTCLUB_FLYER.png',
-  "/images/OMA'S_ANNIVERSARY(1).png",
-  '/images/PARTY_FLYER.png',
-  '/images/SALOON_BUISNESS_FLYER.png',
-  '/images/SOCIAL_MEDIA_FLYER.png',
-  '/images/SPORT POSTER.png',
-  '/images/SPOTIFY_PODCAST_FLYER.png',
-  '/images/SPYRE_FLYER.png',
-  '/images/TRAVEL FLYER.png',
+  '/images/ad-flyer.webp',
+  '/images/bamboo-flyer.webp',
+  '/images/burger-flyer.webp',
+  '/images/club-flyer.webp',
+  '/images/fashion-flyer.webp',
+  '/images/flower-flyer.webp',
+  '/images/forex-flyer.webp',
+  '/images/makeup-flyer.webp',
+  '/images/movie-poster.webp',
+  '/images/nazompro-flyer.webp',
+
 ]
 
 
-const row1 = [...images.slice(0, 11), ...images.slice(0, 11)]
-const row2 = [...images.slice(11), ...images.slice(11)]
+const row1 = [...images.slice(0, 5), ...images.slice(0, 5)]
+const row2 = [...images.slice(5), ...images.slice(5)]
 
 const MarqueeSection: React.FC = () => {
   return (
@@ -63,7 +53,7 @@ const MarqueeSection: React.FC = () => {
               loading="lazy"
               alt=""
               className="rounded-2xl object-cover flex-shrink-0"
-              style={{ width: '420px', height: '270px' }}
+             style={{ width: '280px', height: '200px' }}
             />
           ))}
         </div>
@@ -77,7 +67,7 @@ const MarqueeSection: React.FC = () => {
               loading="lazy"
               alt=""
               className="rounded-2xl object-cover flex-shrink-0"
-              style={{ width: '420px', height: '270px' }}
+             style={{ width: '280px', height: '200px' }}
             />
           ))}
         </div>
