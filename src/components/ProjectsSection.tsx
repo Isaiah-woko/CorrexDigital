@@ -16,10 +16,10 @@ const projects = [
     number: '02',
     category: 'Product',
     name: 'Business Flyers',
-    link: '', // ← no live URL for flyers, leave empty to disable button
-    col1img1: '/images/FASHION_FLYER.png',
-    col1img2: '/images/FOREX_FLYER.png',
-    col2img: "/images/OMA'S_ANNIVERSARY(1).png",
+    link: '',
+    col1img1: '/images/fashion-flyer.webp',
+    col1img2: '/images/forex-flyer.webp',
+    col2img: "/images/ad-flyer.webp",
   },
   {
     number: '03',
@@ -30,8 +30,17 @@ const projects = [
     col1img2: '/images/leorus1.png',
     col2img: '/images/leorus.png',
   },
-  {
+   {
     number: '04',
+    category: 'Product',
+    name: 'Design Flyers',
+    link: '',
+    col1img1: '/images/burger-flyer.webp',
+    col1img2: '/images/movie-poster.webp',
+    col2img: '/images/nazompro-flyer.webp',
+  },
+  {
+    number: '05',
     category: 'Client',
     name: 'Personal Website',
     link: 'https://isaiahwoko.vercel.app',
@@ -39,15 +48,7 @@ const projects = [
     col1img2: '/images/isaiah2.png',
     col2img: '/images/isaiah.png',
   },
-  {
-    number: '05',
-    category: 'Product',
-    name: 'Design Flyers',
-    link: '', // ← no live URL for flyers, leave empty to disable button
-    col1img1: '/images/SALOON_BUISNESS_FLYER.png',
-    col1img2: '/images/SPYRE_FLYER.png',
-    col2img: '/images/FLOWER_FLYER.png',
-  },
+
 ]
 
 const totalCards = projects.length
