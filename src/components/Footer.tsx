@@ -20,6 +20,7 @@ const Footer: React.FC = () => {
       {/* CTA */}
       <div className="flex flex-col items-center gap-6 sm:gap-8 text-center w-full">
         <h2
+          id="contact"
           className="hero-heading font-black uppercase leading-none tracking-tight"
           style={{ fontSize: 'clamp(2rem, 10vw, 120px)' }}
         >
@@ -27,7 +28,10 @@ const Footer: React.FC = () => {
         </h2>
         <p
           className="font-light uppercase tracking-wide leading-snug max-w-[340px] sm:max-w-[400px]"
-          style={{ color: '#D7E2EA', opacity: 0.5, fontSize: 'clamp(0.75rem, 1.4vw, 1.1rem)' }}
+          style={{ color: '#D7E2EA', opacity: 0.5, fontSize: 'clamp(0.75rem, 1.4vw, 1.1rem)',
+          scrollMarginTop: '100px'
+           }}
+
         >
           Ready to build your digital presence? We're one message away.
         </p>
@@ -52,7 +56,8 @@ const Footer: React.FC = () => {
         <div className="flex flex-col items-center gap-5 order-2 lg:order-none">
           {/* Nav links */}
           <nav className="flex flex-wrap justify-center gap-x-5 gap-y-2 sm:gap-x-6 md:gap-x-8">
-            {['About', 'Services', 'Projects', 'Contact'].map((link) => (
+            {['About', 'Services', 'Projects',].map((link) => (
+
               <a
                 key={link}
                 href={`#${link.toLowerCase()}`}
