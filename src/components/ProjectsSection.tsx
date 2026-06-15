@@ -88,14 +88,14 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, containerProg
           background: '#0C0C0C',
           width: '100%',
         }}
-        className="rounded-[28px] sm:rounded-[40px] md:rounded-[50px] lg:rounded-[60px] border-2 border-[#D7E2EA] p-3 sm:p-6 md:p-8 overflow-hidden"
+        className="rounded-[28px] sm:rounded-[40px] md:rounded-[50px] lg:rounded-[60px] border-2 border-[#D7E2EA] p-5 sm:p-6 md:p-8 overflow-hidden"
       >
         {/* Top row */}
-        <div className="flex items-center justify-between mb-3 sm:mb-6">
+        <div className="flex items-center justify-between mb-4 sm:mb-6">
           <div className="flex items-end gap-2 sm:gap-4 md:gap-6">
             <span
               className="font-black leading-none hero-heading"
-              style={{ fontSize: 'clamp(2rem, 8vw, 140px)', lineHeight: 1 }}
+              style={{ fontSize: 'clamp(2.8rem, 12vw, 140px)', lineHeight: 1 }}
             >
               {project.number}
             </span>
@@ -122,20 +122,20 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, containerProg
             </div>
           </div>
 
-          {/* View Project button — anchor if link exists, disabled style if not */}
           {hasLink ? (
             <a
               href={project.link}
+
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-shrink-0 rounded-full border-2 border-[#D7E2EA] text-[#D7E2EA] font-medium uppercase tracking-widest transition-colors hover:bg-[#D7E2EA]/10 px-4 py-2 sm:px-8 sm:py-3 sm:px-10 sm:py-3.5 text-xs sm:text-sm"
+              className="flex-shrink-0 rounded-full border-2 border-[#D7E2EA] text-[#D7E2EA] font-medium uppercase tracking-widest transition-colors hover:bg-[#D7E2EA]/10 px-5 py-2.5 sm:px-8 sm:py-3 text-xs sm:text-sm"
               style={{ textDecoration: 'none' }}
             >
               View Project
             </a>
           ) : (
             <span
-              className="flex-shrink-0 rounded-full border-2 font-medium uppercase tracking-widest px-4 py-2 sm:px-8 sm:py-3 text-xs sm:text-sm"
+              className="flex-shrink-0 rounded-full border-2 font-medium uppercase tracking-widest px-5 py-2.5 sm:px-8 sm:py-3 text-xs sm:text-sm"
               style={{
                 border: '2px solid rgba(215,226,234,0.2)',
                 color: 'rgba(215,226,234,0.2)',
@@ -148,10 +148,10 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, containerProg
         </div>
 
         {/* Mobile: 2 stacked images */}
-        <div className="flex flex-col gap-2 sm:hidden">
+        <div className="flex flex-col gap-3 sm:hidden">
           <div
             className="w-full rounded-[20px] overflow-hidden flex items-center justify-center"
-            style={{ background: '#111', height: 'clamp(130px, 32vw, 220px)' }}
+            style={{ background: '#111', height: 'clamp(200px, 52vw, 320px)' }}
           >
             <img
               src={project.col2img}
@@ -162,7 +162,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, containerProg
           </div>
           <div
             className="w-full rounded-[20px] overflow-hidden flex items-center justify-center"
-            style={{ background: '#111', height: 'clamp(110px, 28vw, 190px)' }}
+            style={{ background: '#111', height: 'clamp(160px, 44vw, 260px)' }}
           >
             <img
               src={project.col1img1}
@@ -173,30 +173,20 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, containerProg
           </div>
         </div>
 
-        {/* SM+: 2-column 3-image grid */}
+        {/* SM+: 2-column 3-image grid — unchanged */}
         <div className="hidden sm:flex gap-3">
           <div className="flex flex-col gap-3" style={{ width: '40%' }}>
             <div
               className="w-full rounded-[28px] md:rounded-[40px] overflow-hidden flex items-center justify-center"
               style={{ background: '#111', height: 'clamp(130px, 16vw, 230px)' }}
             >
-              <img
-                src={project.col1img1}
-                alt={project.name}
-                loading="lazy"
-                className="w-full h-full object-contain"
-              />
+              <img src={project.col1img1} alt={project.name} loading="lazy" className="w-full h-full object-contain" />
             </div>
             <div
               className="w-full rounded-[28px] md:rounded-[40px] overflow-hidden flex items-center justify-center"
               style={{ background: '#111', height: 'clamp(160px, 22vw, 340px)' }}
             >
-              <img
-                src={project.col1img2}
-                alt={project.name}
-                loading="lazy"
-                className="w-full h-full object-contain"
-              />
+              <img src={project.col1img2} alt={project.name} loading="lazy" className="w-full h-full object-contain" />
             </div>
           </div>
           <div
@@ -207,12 +197,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, containerProg
               height: 'calc(clamp(130px, 16vw, 230px) + clamp(160px, 22vw, 340px) + 0.75rem)',
             }}
           >
-            <img
-              src={project.col2img}
-              alt={project.name}
-              loading="lazy"
-              className="w-full h-full object-contain"
-            />
+            <img src={project.col2img} alt={project.name} loading="lazy" className="w-full h-full object-contain" />
           </div>
         </div>
       </motion.div>
