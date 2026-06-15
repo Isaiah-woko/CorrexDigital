@@ -150,19 +150,23 @@ const StackSection: React.FC = () => {
   return (
     <>
       {/* Dev Stack */}
+
       <section
-        className="mt-16 px-5 sm:px-8 md:px-10 py-20 sm:py-24 md:py-32"
+        className="-mt-24 md:-mt-48 lg:mt-16 px-5 sm:px-8 md:px-10 py-12 md:py-16 lg:py-32 relative z-20"
         style={{ background: '#0C0C0C' }}
       >
-        <div className="max-w-5xl mx-auto">
-          <FadeIn delay={0} y={40}>
-            <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-14 sm:mb-20">
-              <h2
-                className="mt-12 hero-heading font-black uppercase leading-none tracking-tight"
-                style={{ fontSize: 'clamp(2.5rem, 8vw, 100px)' }}
-              >
-                Built With
-              </h2>
+  <div className="max-w-5xl mx-auto">
+    <FadeIn delay={0} y={40}>
+      <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-14 sm:mb-20">
+
+        {/* 2. H2 TAG: Eliminates empty top space on mobile/tablet, restores exact lg:mt-12 on desktop */}
+        <h2
+          className="mt-2 md:mt-0 lg:mt-12 hero-heading font-black uppercase leading-none tracking-tight"
+          style={{ fontSize: 'clamp(2.5rem, 8vw, 100px)' }}
+        >
+          Built With
+        </h2>
+
               <p
                 className="font-light uppercase tracking-wide max-w-[260px] sm:text-right leading-snug"
                 style={{

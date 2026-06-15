@@ -1,48 +1,41 @@
 import React from 'react'
 import FadeIn from './FadeIn'
-
 const services = [
   {
     number: '01',
     name: 'Website Design & Development',
     description:
-      'We design and build fast, modern, and conversion-focused websites tailored to your brand — from simple landing pages to full multi-page sites.',
+      'We design and build fast, modern websites tailored to your brand. From focused landing pages to full multi-page experiences, every site is built to convert.',
   },
   {
     number: '02',
     name: 'E-Commerce Store Creation',
     description:
-      'End-to-end online store setup with product management, secure checkout, and everything your business needs to sell online.',
+      'Complete online store setup with product management, secure checkout, and everything your business needs to start selling and scaling online.',
   },
   {
     number: '03',
     name: 'Branding & Visual Identity',
     description:
-      'From logo design to full brand systems — we craft cohesive visual identities that communicate a clear, memorable, and professional presence.',
+      'From logo to full brand system, we create cohesive visual identities that communicate professionalism and leave a lasting impression.',
   },
   {
     number: '04',
     name: 'Graphic Design',
     description:
-      'High-quality graphic design for businesses and personal brands, including social media assets, marketing materials, and digital content.',
+      'Quality graphic design for businesses and personal brands. Social media assets, marketing materials, digital content, and more.',
   },
   {
     number: '05',
-    name: 'Landing Page Design',
+    name: 'Business Digital Transformation',
     description:
-      'High-converting, visually compelling landing pages designed to capture leads, drive sales, and represent your brand with impact.',
+      'We help traditional businesses move online. From building a web presence to digitising operations and setting up tools for sustainable growth.',
   },
   {
     number: '06',
-    name: 'Business Digital Transformation',
-    description:
-      'We help traditional businesses move online — digitising operations, building a web presence, and setting up tools for long-term digital growth.',
-  },
-  {
-    number: '07',
     name: 'AI-Powered Tools & Automation',
     description:
-      'Custom AI-powered solutions and automations that streamline your workflows, reduce manual effort, and unlock new business capabilities.',
+      'Custom AI solutions and workflow automations that cut manual effort, improve efficiency, and open up new capabilities for your business.',
   },
 ]
 
@@ -50,12 +43,12 @@ const ServicesSection: React.FC = () => {
   return (
     <section
       id="services"
-      className="rounded-t-[40px] sm:rounded-t-[50px] md:rounded-t-[60px] px-5 sm:px-8 md:px-10 py-20 sm:py-24 md:py-32"
+      className="rounded-t-[40px] sm:rounded-t-[50px] md:rounded-t-[60px] px-5 sm:px-8 md:px-10 py-8 sm:py-12 md:py-14"
       style={{ background: '#FFFFFF' }}
     >
       <FadeIn delay={0} y={40}>
         <h2
-          className="font-black uppercase text-center mb-16 sm:mb-20 md:mb-28"
+          className="font-black uppercase text-center mb-8 sm:mb-12 md:mb-16"
           style={{ color: '#0C0C0C', fontSize: 'clamp(3rem, 12vw, 160px)' }}
         >
           Services

@@ -8,9 +8,9 @@ const projects = [
     category: 'Client',
     name: 'PeeSmile',
     link: 'https://peesmile.vercel.app',
-    col1img1: '/images/peesmile1.png',
-    col1img2: '/images/peesmile2.png',
-    col2img: '/images/peesmile.png',
+    col1img1: '/images/peesmile1.webp',
+    col1img2: '/images/peesmile2.webp',
+    col2img: '/images/peesmile.webp',
   },
   {
     number: '02',
@@ -19,16 +19,16 @@ const projects = [
     link: '',
     col1img1: '/images/fashion-flyer.webp',
     col1img2: '/images/forex-flyer.webp',
-    col2img: "/images/ad-flyer.webp",
+    col2img: "/images/oma-flyer.webp",
   },
   {
     number: '03',
     category: 'Client',
     name: 'Leorus Studios',
     link: 'https://lerous-studio.vercel.app',
-    col1img1: '/images/leorus2.png',
-    col1img2: '/images/leorus1.png',
-    col2img: '/images/leorus.png',
+    col1img1: '/images/leorus2.webp',
+    col1img2: '/images/leorus1.webp',
+    col2img: '/images/leorus.webp',
   },
    {
     number: '04',
@@ -44,9 +44,18 @@ const projects = [
     category: 'Client',
     name: 'Personal Website',
     link: 'https://isaiahwoko.vercel.app',
-    col1img1: '/images/isaiah1.png',
-    col1img2: '/images/isaiah2.png',
-    col2img: '/images/isaiah.png',
+    col1img1: '/images/isaiah1.webp',
+    col1img2: '/images/isaiah2.webp',
+    col2img: '/images/isaiah.webp',
+  },
+  {
+    number: '06',
+    category: 'Product',
+    name: 'Personal Website',
+    link: '',
+    col1img1: '/images/charri-flyer.webp',
+    col1img2: '/images/makeup-flyer.webp',
+    col2img: '/images/spyre-flyer.webp',
   },
 
 ]
@@ -72,15 +81,17 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, containerProg
 
   return (
     <div
+  className="[--card-h:100vh] sm:[--card-h:60vh] md:[--card-h:70vh] lg:[--card-h:100vh]"
       style={{
         position: 'sticky',
         top: index * CARD_OFFSET,
         paddingTop: index * CARD_OFFSET,
-        height: '100vh',
+        height: 'var(--card-h)',
         display: 'flex',
         alignItems: 'flex-start',
       }}
-    >
+>
+
       <motion.div
         style={{
           scale,
@@ -230,22 +241,30 @@ const ProjectsSection: React.FC = () => {
         </FadeIn>
       </div>
 
-      {/* Cards container */}
+
+    {/* Cards container */}
+      <div style={{ position: 'relative' }}>
       <div
         ref={containerRef}
+        className="[--scroll-len:100vh] sm:[--scroll-len:60vh] md:[--scroll-len:70vh] lg:[--scroll-len:100vh]"
         style={{
-          height: `calc(${totalCards * 100}vh + ${totalCards * CARD_OFFSET}px)`,
-        }}
-      >
-        {projects.map((project, index) => (
-          <ProjectCard
-            key={project.number}
-            project={project}
-            index={index}
-            containerProgress={scrollYProgress}
-          />
-        ))}
-      </div>
+  height: `calc(${totalCards} * var(--scroll-len) + ${totalCards * CARD_OFFSET}px)`,
+}}
+
+    >
+
+
+    {projects.map((project, index) => (
+      <ProjectCard
+        key={project.number}
+        project={project}
+        index={index}
+        containerProgress={scrollYProgress}
+      />
+    ))}
+  </div>
+</div>
+
     </section>
   )
 }
