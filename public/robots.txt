@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.correxdigital.com/sitemap.xml
+Sitemap: https://correxdigital.vercel.app/sitemap.xml
