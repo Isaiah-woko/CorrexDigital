@@ -5,7 +5,7 @@ import ServicesSection from './components/ServicesSection'
 import ProjectsSection from './components/ProjectsSection'
 import StackSection from './components/StackSection'
 import Footer from './components/Footer'
-import { Analytics } from "@vercel/analytics/next"
+
 
 function App() {
   return (
@@ -17,7 +17,6 @@ function App() {
       <ProjectsSection />
       <StackSection />
       <Footer />
-      <Analytics />
     </div>
   )
 }
