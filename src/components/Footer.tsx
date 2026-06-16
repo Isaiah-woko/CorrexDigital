@@ -1,12 +1,12 @@
 import React from 'react'
-import { FaGithub, FaInstagram, FaLinkedin, FaTwitter, FaPinterest, FaDribbble } from 'react-icons/fa'
+import { FaGithub, FaInstagram, FaLinkedin, FaPinterest, FaDribbble } from 'react-icons/fa'
 import ContactButton from './ContactButton'
 
 const socialLinks = [
   { name: 'GitHub', href: 'https://github.com/Isaiah-woko', Icon: FaGithub },
-  { name: 'LinkedIn', href: '#', Icon: FaLinkedin },
-  { name: 'Twitter', href: '#', Icon: FaTwitter },
-  { name: 'Instagram', href: '#', Icon: FaInstagram },
+  { name: 'LinkedIn', href: 'https://www.linkedin.com/company/correx-digital/', Icon: FaLinkedin },
+  // { name: 'Twitter', href: '#', Icon: FaTwitter },
+  { name: 'Instagram', href: 'https://www.instagram.com/correxdigital', Icon: FaInstagram },
   { name: 'Pinterest', href: 'https://www.pinterest.com/correxdigital', Icon: FaPinterest },
   { name: 'Dribbble', href: 'https://dribbble.com/correx-digital', Icon: FaDribbble },
 ]
