@@ -7,8 +7,8 @@ interface ContactModalProps {
   onClose: () => void
 }
 
-const WHATSAPP_NUMBER = '2348139936089'
-const EMAIL = 'hello@correxdigital.com'
+const WHATSAPP_NUMBER = '2348120981559'
+const EMAIL = 'correxdigital@gmail.com'
 
 const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
   const [name, setName] = useState('')
